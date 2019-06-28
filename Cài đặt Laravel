@@ -1,0 +1,17 @@
+1. Cài đặt biến môi trường cho php:
+Run -> SystemPropertiesAdvanced -> Variables -> Path -> Thêm đường dẫn đến thư mục php trong xampp
+Kiểm tra: cmd -> php -v
+
+2. Cài đặt biến môi trường cho composer:
+Vào getcomposer.org -> download -> Composer-Setup.exe
+Kiểm tra: cmd -> composer -v
+
+3. Cài đặt Laravel:
+Vào laravel.com -> Documentation -> Chọn bản mới nhất -> Làm theo hướng dẫn
+Bước 1: run -> cmd -> cd vào thư mục htdocs trong xampp
+Bước 2: composer global require laravel/installer
+Bước 3: laravel new blog
+Bước 4: composer create-project --prefer-dist laravel/laravel blog
+Bước 5: cd vào thư mục blog trong htdocs
+Bước 6: php artisan serve
+Bước 7: truy cập http://localhost:8000
