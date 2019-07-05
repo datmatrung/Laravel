@@ -13,6 +13,7 @@ sudo chmod +x           /usr/local/bin/composer
 composer global require laravel/installer
 apt install -y libapache2-mod-php7.3 php7.3-mbstring php7.3-xmlrpc php7.3-soap php7.3-gd php7.3-xml php7.3-cli php7.3-zip
 apt install -y unzip
+composer -v
 
 4. Cài laravel vào droplet
 https://laravel.com/docs/5.8
