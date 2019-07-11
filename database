@@ -35,7 +35,6 @@ CREATE TABLE SanPham(
 	SoLuongBan	INT NOT NULL, 
 	SoLuocXem	INT NOT NULL, 
 	BiXoa		BIT NOT NULL, 
-	MaLoaiSanPham	INT NOT NULL, 
 	MaHangSanXuat	INT NOT NULL
 );
 CREATE TABLE DonDatHang(
