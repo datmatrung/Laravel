@@ -12,9 +12,9 @@ Xem sơ đồ: http://bit.ly/dacta
 Cứ mỗi mũi tên thực hiện hai bước:
 * Đối với model của bảng 1:
 public function tên-bảng-n(){
-  return $this->hasMany('tên-bảng-n', 'tên-khóa-ngoại', 'tên-khóa-chính-của-bảng-1);
+  return $this->hasMany('tên-bảng-n', 'tên-khóa-ngoại', 'tên-khóa-chính-của-bảng-1');
 };
 * Đối với model của bảng n:
 public function tên-bảng-1(){
-  return $this->belongsTo('tên-bảng-1', 'tên-khóa-ngoại', 'tên-khóa-chính-của-bảng-n);
+  return $this->belongsTo('tên-bảng-1', 'tên-khóa-ngoại', 'tên-khóa-chính-của-bảng-n');
 };
