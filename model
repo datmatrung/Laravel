@@ -1,0 +1,20 @@
+1. Tạo database:
+https://github.com/datmatrung/Laravel/blob/master/database
+
+2. Tạo model:
+php artisan make:model tên-model
+
+3. Khai báo model:
+protected $table = "tên-bảng";
+
+4. Liên kết model:
+Xem sơ đồ: http://bit.ly/dacta
+Cứ mỗi mũi tên thực hiện hai bước:
+* Đối với model của bảng 1:
+public function tên-bảng-n(){
+  return $this->hasMany('tên-bảng-n', 'tên-khóa-ngoại', 'tên-khóa-chính-của-bảng-1);
+};
+* Đối với model của bảng n:
+public function tên-bảng-1(){
+  return $this->belongsTo('tên-bảng-1', 'tên-khóa-ngoại', 'tên-khóa-chính-của-bảng-n);
+};
