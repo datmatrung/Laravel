@@ -2,29 +2,10 @@
 CREATE DATABASE DongHo CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 2. Tạo bảng
-CREATE TABLE LoaiTaiKhoan(
-	MaLoaiTaiKhoan	INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-	TenLoaiTaiKhoan	VARCHAR(30) NOT NULL
-);
 CREATE TABLE HangSanXuat(
 	MaHangSanXuat	INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	TenHangSanXuat	VARCHAR(64) NOT NULL,
 	BiXoa		BIT NOT NULL
-);
-CREATE TABLE TinhTrang(
-	MaTinhTrang	INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-	TenTinhTrang	VARCHAR(45) NOT NULL
-);
-CREATE TABLE TaiKhoan(
-	MaTaiKhoan	INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-	TenDangNhap	VARCHAR(30) NOT NULL, 
-	MatKhau		VARCHAR(30) NOT NULL, 
-	TenHienThi	VARCHAR(64) NOT NULL, 
-	DiaChi		VARCHAR(256),
-	SoDienThoai	VARCHAR(11) NOT NULL,
-	Email		VARCHAR(64) NOT NULL, 
-	BiXoa		BIT NOT NULL, 
-	MaLoaiTaiKhoan	INT NOT NULL
 );
 CREATE TABLE SanPham(
 	MaSanPham	INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -37,51 +18,13 @@ CREATE TABLE SanPham(
 	BiXoa		BIT NOT NULL, 
 	MaHangSanXuat	INT NOT NULL
 );
-CREATE TABLE DonDatHang(
-	MaDonDatHang	VARCHAR(9) PRIMARY KEY NOT NULL, 
-	NgayLapPhieu	DATETIME NOT NULL, 
-	TongThanhTien	INT NOT NULL, 
-	MaTaiKhoan	INT NOT NULL, 
-	MaTinhTrang	INT NOT NULL
-);
-CREATE TABLE ChiTietDonDatHang(
-	MaChiTietDonDatHang	VARCHAR(11) PRIMARY KEY NOT NULL, 
-	SoLuong			INT NOT NULL, 
-	GiaBan			INT NOT NULL, 
-	MaDonDatHang		VARCHAR(9) NOT NULL, 
-	MaSanPham		INT NOT NULL
-);
-
-3. Liên kết bảng
-ALTER TABLE TaiKhoan ADD CONSTRAINT fk_TaiKhoan_LoaiTaiKhoan 
-	FOREIGN KEY (MaLoaiTaiKhoan) REFERENCES LoaiTaiKhoan (MaLoaiTaiKhoan);
 ALTER TABLE SanPham ADD CONSTRAINT fk_SanPham_HangSanXuat 
 	FOREIGN KEY (MaHangSanXuat) REFERENCES HangSanXuat (MaHangSanXuat);
-ALTER TABLE DonDatHang ADD CONSTRAINT fk_DonDatHang_TinhTrang 
-	FOREIGN KEY (MaTinhTrang) REFERENCES TinhTrang (MaTinhTrang);
-ALTER TABLE DonDatHang ADD CONSTRAINT fk_DonDatHang_TaiKhoan 
-	FOREIGN KEY (MaTaiKhoan) REFERENCES TaiKhoan (MaTaiKhoan);
-ALTER TABLE ChiTietDonDatHang ADD CONSTRAINT fk_ChiTietDonDatHang_DonDatHang 
-	FOREIGN KEY (MaDonDatHang) REFERENCES DonDatHang (MaDonDatHang);
-ALTER TABLE ChiTietDonDatHang ADD CONSTRAINT fk_ChiTietDonDatHang_SanPham 
-	FOREIGN KEY (MaSanPham) REFERENCES SanPham (MaSanPham);
 	
-4. Nhập dữ liệu vào bảng
+3. Nhập dữ liệu vào bảng
 INSERT INTO HangSanXuat (TenHangSanXuat, BiXoa) VALUES
 	('Rolex', 0), ('Omega', 0), ('Longines', 0), ('Tissot', 0), ('Seiko', 0), ('Orient', 0), ('Citizen', 0), ('Casio', 0);
-INSERT INTO LoaiTaiKhoan (TenLoaiTaiKhoan) VALUES ('Admin'), ('User'), ('Customer'), ('Shipper');
-INSERT INTO TaiKhoan (TenDangNhap, MatKhau, TenHienThi, DiaChi, SoDienThoai, Email, BiXoa, MaLoaiTaiKhoan) VALUES
-	('datmatrung', '123456', N'Đạt Ma Trung', N'79 Nguyễn Phúc Chu', '0888888441', 'datmatrung@gmail.com', 0, 1),
-	('datmathuy', '123456', N'Đạt Ma Thủy', N'79 Nguyễn Phúc Chu', '0888888441', 'datmatrung@gmail.com', 0, 2),
-	('datmadang', '123456', N'Đạt Ma Đăng', N'79 Nguyễn Phúc Chu', '0888888441', 'datmatrung@gmail.com', 0, 3),
-	('datmabang', '123456', N'Đạt Ma Băng', N'79 Nguyễn Phúc Chu', '0888888441', 'datmatrung@gmail.com', 0, 4);
-INSERT INTO TinhTrang (TenTinhTrang) VALUES (N'Đặt hàng'), (N'Đang giao hàng'), (N'Thanh toán'), (N'Hủy');
-INSERT INTO DonDatHang (MaDonDatHang, NgayLapPhieu, TongThanhTien, MaTaiKhoan, MaTinhTrang) VALUES
-	('081012001', '2012-10-08', 380000, 1, 1),
-	('081012002', '2012-10-08', 380000, 1, 1),
-	('081012003', '2012-10-08', 440000, 1, 1),
-	('131212001', '2012-12-13', 640000, 1, 1),
-	('131212002', '2012-12-13', 700000, 1, 1);
+
 INSERT INTO SanPham (TenSanPham, HinhURL, GiaSanPham, SoLuongTon, SoLuongBan, SoLuocXem, BiXoa, MaHangSanXuat) VALUES
 	('Rolex Submariner Stainless Steel Yellow Gold Watch Blue Ceramic Watch', 'product-1.jpg', 13477, 13, 3, 347, 0, 1), 
 	('Rolex Date Blue Dial Stainless Steel Men Watch', 'product-2.jpg', 6397, 63, 3, 397, 0, 1), 
@@ -166,13 +109,3 @@ INSERT INTO SanPham (TenSanPham, HinhURL, GiaSanPham, SoLuongTon, SoLuongBan, So
 	('Casio Vintage Collection Digital Unisex Bracelet Watch', 'product-81.jpg', 43, 43, 3, 35, 0, 8), 
 	('Casio Men Brown Leather Quartz Watch with Silver Dial', 'product-82.jpg', 31, 31, 1, 19, 0, 8), 
 	('Casio Women Baby White Resin Japanese Quartz Diving Watch', 'product-83.jpg', 104, 10, 3, 4, 0, 8);
-INSERT INTO ChiTietDonDatHang (MaChiTietDonDatHang, SoLuong, GiaBan, MaDonDatHang, MaSanPham) VALUES 
-	('08101200100', 4, 260000, '081012001', 11),
-	('08101200101', 3, 160000, '081012001', 4),
-	('08101200102', 30, 220000, '081012001', 10),
-	('08101200103', 1, 380000, '081012001', 9),
-	('08101200200', 1, 380000, '081012002', 9),
-	('08101200300', 2, 220000, '081012003', 10),
-	('13121200100', 4, 160000, '131212001', 4),
-	('13121200200', 1, 180000, '131212002', 5),
-	('13121200201', 2, 260000, '131212002', 11);
