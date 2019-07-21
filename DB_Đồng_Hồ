@@ -1,21 +1,21 @@
-CREATE DATABASE DongHo CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE TABLE SanPham(
-                      MaSanPham	INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-                      Ten VARCHAR(200),
-                      Danhmuc VARCHAR(50),
-                      Day VARCHAR(50),
-                      Loai VARCHAR(50),
-                      Gia BIGINT,
-                      Mota TEXT,
-                      Anh1 VARCHAR(150),
-                      Anh2 VARCHAR(150),
-                      Anh3 VARCHAR(150),
-                      Anh4 VARCHAR(150),
-                      Hang VARCHAR(50),
-                      Xuatxu VARCHAR(50)
+CREATE DATABASE dongho CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE TABLE sanpham(
+                      masanpham	INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+                      ten VARCHAR(200),
+                      danhmuc VARCHAR(50),
+                      day VARCHAR(50),
+                      loai VARCHAR(50),
+                      gia BIGINT,
+                      mota TEXT,
+                      anh1 VARCHAR(150),
+                      anh2 VARCHAR(150),
+                      anh3 VARCHAR(150),
+                      anh4 VARCHAR(150),
+                      hang VARCHAR(50),
+                      xuatxu VARCHAR(50)
 );
 
-INSERT INTO SanPham (Ten, Danhmuc, Day, Loai, Gia, Mota, Anh1, Anh2, Anh3, Anh4, Hang, Xuatxu) VALUES
+INSERT INTO sanpham (ten, danhmuc, day, loai, gia, mota, anh1, anh2, anh3, anh4, hang, xuatxu) VALUES
 ('Đồng Hồ Nam Dây Da Cá Sấu Citizen', 'Đồng hồ nam', 'Dây da', 'Đồng hồ kim', 80399000, '100% đồng hồ Citizen chính hãng thương hiệu Nhật Bản.<br>Công nghệ Eco-drive độc quyền Citizen giúp đồng hồ hoạt động không dùng Pin.<br>Dây da cá sấu thật chính hãng 100%.<br>Mặt kính Sapphire hạn chế trầy xước cao cấp.', 'https://salt.tikicdn.com/cache/w1200/ts/product/56/10/07/e1196a2f7ec8aca850f60772ca33ff70.jpg', 'https://salt.tikicdn.com/cache/w1200/ts/product/bf/8f/15/1fa5587a5fa1048009e0598c5173ad4f.jpg', 'https://salt.tikicdn.com/cache/w1200/ts/product/7d/5d/3e/e84a056d379d20e947bb88bab55dd4e0.jpg', 'https://salt.tikicdn.com/cache/w1200/ts/product/80/53/fc/abe0dd2dc2bc4dcc67a890fa02c76c6b.jpg', 'Citizen', 'Nhật Bản'),
 ('Đồng Hồ Nam Dây Kim Loại Citizen', 'Đồng hồ nam', 'Dây kim loại', 'Đồng hồ kim', 59742000, '100% đồng hồ Citizen chính hãng thương hiệu Nhật Bản.<br>Công nghệ Eco-drive độc quyền Citizen giúp đồng hồ hoạt động không dùng Pin.<br>Dây kim loại chất liệu thép không gỉ cao cấp.<br>Mặt kính Sapphire hạn chế trầy xước cao cấp.', 'https://salt.tikicdn.com/cache/w1200/ts/product/61/da/9b/214ddd683463248f4bab7935ebb965b5.jpg', 'https://salt.tikicdn.com/cache/w1200/ts/product/45/79/87/297baa0ba658e12b5ef477fce86f1681.jpg', 'https://salt.tikicdn.com/cache/w1200/ts/product/2c/72/c8/2ea5fe956e687742d11c6acd8871e31c.jpg', 'https://salt.tikicdn.com/cache/w1200/ts/product/df/3b/fd/4832943dc350a11f95229ac698e8395b.jpg', 'Citizen', 'Nhật Bản'),
 ('Đồng Hồ Nam Dây Titanium Citizen', 'Đồng hồ nam', 'Dây kim loại', 'Đồng hồ kim', 39380000, 'Mặt thiết kế thể thao nam tính, có khung hiển thị điện tử.<br>Mặt kính trong suốt rõ nét, chống trầy xước, chịu lực tốt.<br>Dây Titanium cao cấp sáng bóng, bền chắc, không kích ứng da.<br>Chống thấm nước hiểu quả, thoải mái sinh hoạt hằng ngày.<br>Vạch chia giờ chi tiết, dễ quan sát, khung viền bằng thép không gỉ siêu bền.', 'https://salt.tikicdn.com/cache/w1200/ts/product/52/5b/bf/8f94fc7e5c4a99aa3e5e4cd7fc233fd2.jpg', 'https://salt.tikicdn.com/cache/w1200/ts/product/9a/e9/d1/5cd1622abaa840effa5f703aab77b8d3.jpg', 'https://salt.tikicdn.com/cache/w1200/ts/product/be/b1/97/c8de82f45420868b4ab904a35808ed5d.jpg', 'https://salt.tikicdn.com/cache/w1200/ts/product/66/0b/b9/d5914a9380b0421097d8453cef5c2f87.jpg', 'Citizen', 'Nhật Bản'),
