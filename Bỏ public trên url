@@ -1,0 +1,5 @@
+Trong thư mục public_html:
+1. Tạo thư mục local
+2. Chuyển tất cả thư mục và tập tin nằm trong public_html vào local
+3. Chuyển tất cả thư mục và tập tin nằm trong public ra ngoài public_html
+4. Mở file index.php sửa lại hai đường dẫn đến boostrap từ /../ thành /local/
