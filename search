@@ -11,4 +11,8 @@ Route::any('/search',function(){
     return view('danhmuc', [
       'watches' => $watches
     ]);
+  else 
+    return view('trangchu', [
+            'watches' => DB::table('sanpham')->paginate(16)
+    ]);
 });
