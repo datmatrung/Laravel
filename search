@@ -1,0 +1,14 @@
+<form class="form-inline" action="/search" method="POST">
+  {{ csrf_field() }}
+  <input class="input" type="text" name="q" placeholder="Nhập từ khóa cần tìm">
+  <button class="search-btn" type="submit">Tìm kiếm</button>
+</form>
+
+Route::any('/search',function(){
+  $q = input::get ('q');
+  $watches = sanpham::where('ten', 'LIKE', '%'.$q.'%')->get();
+  if(count($watches) > 0) 
+    return view('danhmuc', [
+      'watches' => $watches
+    ]);
+});
