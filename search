@@ -19,3 +19,5 @@ Route::any('/search',function(){
             'watches' => DB::table('sanpham')->paginate(16)
     ]);
 });
+
+3. Xem thêm: https://medium.com/justlaravel/search-functionality-in-laravel-a2527282150b
