@@ -1,4 +1,5 @@
 1. Sửa lại route trang chủ:
+Thêm thư viện: use Illuminate\Support\Facades\DB;
 Route::get('/', function () {
         return view('trangchu', [
             'watches' => DB::table('sanpham')->paginate(16)
