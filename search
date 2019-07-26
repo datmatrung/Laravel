@@ -1,9 +1,12 @@
-<form class="form-inline" action="/search" method="POST">
+1. Tạo form tìm kiếm:
+<form action="/search" method="post">
   {{ csrf_field() }}
-  <input class="input" type="text" name="q" placeholder="Nhập từ khóa cần tìm">
-  <button class="search-btn" type="submit">Tìm kiếm</button>
+  <input type="text" name="q" placeholder="Nhập từ khóa cần tìm">
+  <button type="submit">Tìm kiếm</button>
 </form>
 
+2. Tạo route:
+Thêm thư viện trong route: use Illuminate\Support\Facades\Input;
 Route::any('/search',function(){
   $q = input::get ('q');
   $watches = sanpham::where('ten', 'LIKE', '%'.$q.'%')->get();
