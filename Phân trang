@@ -1,0 +1,42 @@
+1. Sửa lại route trang chủ:
+Route::get('/', function () {
+        return view('trangchu', [
+            'watches' => DB::table('sanpham')->paginate(16)
+        ]);
+    });
+    
+2. Thêm đoạn code bên dưới trang chủ: 
+{{ $watches->links() }}
+
+3. Thêm vào style.css
+.pagination {
+    float: right;
+}
+.pagination li {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #FFF;
+    border: 1px solid #E4E7ED;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+.pagination li + li {
+    margin-left: 5px;
+}
+.pagination li:hover {
+    background-color: #E4E7ED;
+    color: #D10024;
+}
+.pagination li.active {
+    background-color: #D10024;
+    border-color: #D10024;
+    color: #FFF;
+    font-weight: 500;
+    cursor: default;
+}
+.pagination li a {
+    display: block;
+}
