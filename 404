@@ -1,0 +1,26 @@
+1. Route:
+Route::get('pagenotfound',[
+  'as' => 'notfound',
+  'uses' => 'HomeController@pagenotfound'
+]);
+
+2. Controller:
+public function pagenotfound(){
+  return view('errors.503');
+}
+
+3. App/Exceptions/Handler.php:
+public function render($request, Exception $exception)
+{
+    if ($this->isHttpException($exception)){
+        switch ($exception->getStatusCode())
+        {
+            case 404: return response()->route('notfound'); break;
+            case 500: return response()->route('notfound'); break;
+            default: return $this->renderHttpException($e); break;
+        }
+    }
+    else return parent::render($request, $exception);
+}
+
+4. Parem function __construct()
